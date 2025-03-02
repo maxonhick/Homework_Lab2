@@ -1,9 +1,9 @@
 #include <iostream>
-using namespace std;
-int main(){
-	cout << "Введите имя пользователя: ";
-	string name;
-	getline(cin, name);
-	cout << "Hello world from " << name <<  endl;
-	return 0;
+
+int main(){ // Главная функция программы
+	std::cout << "Введите имя пользователя: "; // Сообщение для ползьователя
+	std::string name; // Создаём переменную для имени
+	std::getline(std::cin, name); // Считываем введённоу имя
+	std::cout << "Hello world from " << name <<  std::endl; // Вывод
+	return 0; // Завершаем программу
 }
