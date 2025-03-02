@@ -36,4 +36,11 @@ vim hello_world.cpp
 Перейдём в ветку ```patch1```: ```git checkout patch1```\
 Изменим файл также через vim.\
 3. **commit, push** локальную ветку в удалённый репозиторий.\
-```git commit -am "vers. without 'using namespace std;'"```
+```sh
+git commit -am "vers. without 'using namespace std;'"
+git push --set-upstream lab2 patch1
+```
+4. Проверьте, что ветка ```patch1``` доступна в удалёный репозитории.
+![Проверка доступности новой ветки](./branches.png)
+5. Создайте pull-request ```patch1 -> master```.
+Для этого на самой странице репозитория надо нажать кнопку ```Compare && pull request```. (сомневаюсь, что нужны лишнее скрины)
