@@ -147,7 +147,7 @@ git checkout patch2 // Переход в новую ветку
 3. **commit, push**, создайте pull-request ```patch2 -> master```.
 ```sh
 git commit -am "chenged style 'hello_world.cpp'"
-git push
+git push --set-upstream lab2 patch2
 ```
 pull-request так же содаётся через сайт Git-Hub
 </details>
