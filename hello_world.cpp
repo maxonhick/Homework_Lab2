@@ -1,9 +1,9 @@
 #include <iostream>
 
-int main(){ // Главная функция программы
-	std::cout << "Введите имя пользователя: "; // Сообщение для ползьователя
-	std::string name; // Создаём переменную для имени
-	std::getline(std::cin, name); // Считываем введённоу имя
-	std::cout << "Hello world from " << name <<  std::endl; // Вывод
-	return 0; // Завершаем программу
+int main(){ // The main function of the program
+	std::cout << "Введите имя пользователя: "; // Message to user
+	std::string name; // Create a variable for the name
+	std::getline(std::cin, name); // We read the entered name
+	std::cout << "Hello world from " << name <<  std::endl; // Conclusion
+	return 0; // We are finishing the program
 }
