@@ -59,7 +59,7 @@ git push --set-upstream lab2 patch1
 ![Выполненый merge и delete patch1](./merge.png)
 10. Локально выполните **pull**.\
 ```git checkout main``` - перейдёи в основную ветку\
-```git pull``` - получим все изменения\
+```git pull``` - получим все изменения
 11. С помощью команды **git log** просмотрите историю в локальной версии ветки ```master```.
 <details>
 <summary>Вывод команды:</summary>
@@ -129,7 +129,25 @@ Date:   Sun Mar 2 10:43:30 2025 +0300
     first commit
 ```
 </details>
+
 12. Удалите локальную ветку ```patch1```.\
 ```git branch -d patch1``` - удаляем локально ветку ```patch1```\
 ```git fetch --prune``` - удаляем информацию об удалённой ветке
+</details>
+<details>
+<summary>Part III</summary>
+
+1. Создайте новую локальную ветку ```patch2```.
+```sh
+git branch patch2 // Содание новой ветки
+git checkout patch2 // Переход в новую ветку
+```
+2. Измените code style с помощью утилиты clang-format. Например, используя опцию ```-style=Mozilla```.\
+```clang-format -style=Mozilla -i hello_world.cpp``` - изменили формат
+3. **commit, push**, создайте pull-request ```patch2 -> master```.
+```sh
+git commit -am "chenged style 'hello_world.cpp'"
+git push
+```
+pull-request так же содаётся через сайт Git-Hub
 </details>
