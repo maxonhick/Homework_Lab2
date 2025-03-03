@@ -59,7 +59,7 @@ git push --set-upstream lab2 patch1
 ![Выполненый merge и delete patch1](./merge.png)
 10. Локально выполните **pull**.\
 ```git checkout main``` - перейдёи в основную ветку\
-```git pull``` - получим все изменения\
+```git pull``` - получим все изменения
 11. С помощью команды **git log** просмотрите историю в локальной версии ветки ```master```.
 <details>
 <summary>Вывод команды:</summary>
@@ -129,7 +129,44 @@ Date:   Sun Mar 2 10:43:30 2025 +0300
     first commit
 ```
 </details>
+
 12. Удалите локальную ветку ```patch1```.\
 ```git branch -d patch1``` - удаляем локально ветку ```patch1```\
 ```git fetch --prune``` - удаляем информацию об удалённой ветке
+</details>
+<details>
+<summary>Part III</summary>
+
+1. Создайте новую локальную ветку ```patch2```.
+```sh
+git branch patch2 // Содание новой ветки
+git checkout patch2 // Переход в новую ветку
+```
+2. Измените code style с помощью утилиты clang-format. Например, используя опцию ```-style=Mozilla```.\
+```clang-format -style=Mozilla -i hello_world.cpp``` - изменили формат
+3. **commit, push**, создайте pull-request ```patch2 -> master```.
+```sh
+git commit -am "chenged style 'hello_world.cpp'"
+git push --set-upstream lab2 patch2
+```
+pull-request так же содаётся через сайт Git-Hub\
+4. В ветке master в удаленном репозитории измените комментарии, например, расставьте знаки препинания, переведите комментарии на другой язык.\
+Выполняется через сайт, скрины излишни, выполнение пункта можно посмотреть в истории commit'ов репозитория.\
+5. Убедитесь, что в pull-request появились конфликтны.
+![конфликт версий](./conflict.png)
+6. Для этого локально выполните **pull + rebase** (точную последовательность команд, следует узнать самостоятельно). **Исправьте конфликты.**
+```sh
+git pul --rebase lab2 main
+vim hello_world.cpp // Исправляем конфликт в файле
+git add hello_world.cpp // Зафиксируем изменения 
+git rebase --continue // Продолжим исправление конфликтов
+```
+7. Сделайте force push в ветку ```patch2```
+```sh
+git push lab2 patch2 --force-with-lease
+```
+8. Убедитеcь, что в pull-request пропали конфликтны.
+![Конфликты пропали](./no_conflicts.png)
+9. Вмержите pull-request ```patch2 -> master```.\
+Делается через сайт, шаги показаны в Part II.
 </details>
